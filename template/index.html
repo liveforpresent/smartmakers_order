@@ -1,0 +1,177 @@
+<html
+    class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"
+    lang="en">
+
+<head>
+    <!-- meta data -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!--font-family-->
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!--close icon-->
+    <link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+
+    <!-- title of site -->
+    <title>Smartmakers 주문하기</title>
+
+    <!-- For favicon png -->
+    <link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png">
+
+    <!--font-awesome.min.css-->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <!--linear icon css-->
+    <link rel="stylesheet" href="assets/css/linearicons.css">
+
+    <!--flaticon.css-->
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+
+    <!--animate.css-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <!--owl.carousel.css-->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+
+    <!--bootstrap.min.css-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- bootsnav -->
+    <link rel="stylesheet" href="assets/css/bootsnav.css">
+
+    <!--style.css-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!--responsive.css-->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <!--google icon-->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <div class="order">
+        <div class="title-area">
+            <h1>
+                주문하기
+            </h1>
+        </div>
+        <form id="order_form" action="/submit" method="POST">
+            <div class="content-area">
+                <h3>구매자</h3>
+                <div class="mb-3">
+                    <label for="buyer" class="form-label"></label>
+                    <input type="text" class="form-control" id="buyer" name="buyer" placeholder="업체명이나 성함을 입력해주세요">
+                </div>
+                <h3>연락처</h3>
+                <div class="mb-3">
+                    <label for="phone" class="form-label"></label>
+                    <input type="text" class="form-control" id="phone" name="phone" placeholder="휴대폰 번호를 입력해주세요">
+                </div>
+                <h3>네온 종류</h3>
+                <div class="radio-area">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="neon_type" id="type_inner"
+                            value="type_inner">
+                        <label class="form-check-label" for="type_inner">
+                            내부 네온
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="neon_type" id="type_outer"
+                            value="type_outer">
+                        <label class="form-check-label" for="type_outer">
+                            외부 네온
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="neon_type" id="type_chandelier"
+                            value="type_chandelier">
+                        <label class="form-check-label" for="type_chandelier">
+                            샹들리에 네온
+                        </label>
+                    </div>
+                </div>
+                <h3>가로</h3>
+                <div class="mb-3">
+                    <label for="neon-width" class="form-label"></label>
+                    <input type="text" class="form-control" id="neon_width" name="neon_width"
+                        placeholder="가로 (샹들리에 네온의 경우 직경/지름)을 입력해주세요">
+                </div>
+                <h3>세로</h3>
+                <div class="mb-3">
+                    <label for="neon-height" class="form-label"></label>
+                    <input type="text" class="form-control" id="neon_height" name="neon_height"
+                        placeholder="세로 (샹들리에 네온의 경우 직경/지름)을 입력해주세요">
+                </div>
+                <h3>간판 내용</h3>
+                <div class="mb-3">
+                    <label for="neon-content" class="form-label"></label>
+                    <textarea class="form-control" id="neon_content" name="neon_content" rows="3" placeholder="간판에 들어갈 문구를 적어주세요"
+                        style="resize: none;"></textarea>
+                </div>
+                <h3>기타 요청 사항</h3>
+                <div class="mb-3">
+                    <label for="req_contents" class="form-label"></label>
+                    <textarea class="form-control" id="req_contents" name="req_contents" rows="3" placeholder="기타 요청 사항을 적어주세요"
+                        style="resize: none;"></textarea>
+                </div>
+                <h3>시공 여부</h3>
+                <div class="radio-area">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="construction" id="construction_true"
+                            value="construction_true">
+                        <label class="form-check-label" for="construction_true">
+                            O
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="construction" id="construction_false"
+                            value="construction_false">
+                        <label class="form-check-label" for="construction_false">
+                            X
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="submit-button">
+                <button type="submit" class="btn btn-primary mb-3" id="submit_button">주문하기</button>
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <!-- event.js -->
+        <script src="assets/js/event.js"></script>
+
+        <!-- Include all js compiled plugins (below), or include individual files as needed -->
+        <script src="assets/js/jquery.js"></script>
+
+        <!--bootstrap.min.js-->
+        <script src="assets/js/bootstrap.min.js"></script>
+
+        <!-- bootsnav js -->
+        <script src="assets/js/bootsnav.js"></script>
+    </div>
+</body>
+
+</html>
