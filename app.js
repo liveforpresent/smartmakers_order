@@ -37,14 +37,14 @@ function sendToServer(values){
     const connection = dbconfig();
 
     connection.query(
-        sql,
-        values,
-        (err) => {
+        sql, values, (err) => {
             if (err){
                 console.log(err);
             }
         }
     );
+
+    return connection.connect();
 }
 
 // main
@@ -68,7 +68,7 @@ app.post('/submit', async (req, res) => {
     if (buyer === "" || phone === "" || neonType === "" || neonWidth === "" || neonHeight === "" || neonContent === "" || reqContents === "" || construction === ""){
         return;
     }else{
-        console.log('success');
+        console.log('success sending');
         sendToServer(values);
         res.redirect('/submit.html');
     }
@@ -76,5 +76,5 @@ app.post('/submit', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log("server running in port 3000");
+    console.log("server running in port");
 });

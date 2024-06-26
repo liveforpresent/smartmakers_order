@@ -23,7 +23,6 @@ constructionList.forEach(element => {
 elements = [buyer, phone, neonWidth, neonHeight, neonContent, reqContents];
 
 orderForm.addEventListener("submit", (event) => {
-    console.log(neonType);
     for(var i = 0; i < elements.length; i++){
         if(!elements[i].value){
             elements[i].focus();
@@ -48,8 +47,6 @@ orderForm.addEventListener("submit", (event) => {
         event.preventDefault();
         return false;
     }
-
-    console.log('success');
 
     return true;
 });
