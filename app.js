@@ -4,8 +4,10 @@ import helmet from 'helmet';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { createConnection } from 'mysql2';
+import { config } from 'dotenv';
 
 const app = express();
+config();
 const port = process.env.PORT;
 
 // 보안
