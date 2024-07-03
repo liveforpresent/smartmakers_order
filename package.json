@@ -16,5 +16,6 @@
     "mysql2": "^3.10.1",
     "pm2": "^5.4.1"
   },
-  "type": "module"
+  "type": "module",
+  "private" : true
 }
