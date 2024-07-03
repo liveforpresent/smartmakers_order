@@ -51,7 +51,7 @@ function sendToServer(values){
 
 // main
 app.get('/', (req, res) => {
-    res.sendFile("/index.html");  
+    res.send("hello");  
 });
 
 // 문의 버튼
