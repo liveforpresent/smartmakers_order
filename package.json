@@ -16,5 +16,9 @@
     "mysql2": "^3.10.1",
     "pm2": "^5.4.1"
   },
-  "type": "module"
+  "type": "module",
+  "repository": {
+    "url": "https://github.com/liveforpresent/smartmakers_order.git",
+    "type": "git"
+  }
 }
