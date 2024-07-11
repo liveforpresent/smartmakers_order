@@ -54,6 +54,16 @@ app.get('/', (req, res) => {
     res.sendFile("/index.html");  
 });
 
+// app request
+app.get('/items', (req, res) => {
+    connection.query('SELECT * FROM User', (error, rows) => {
+        if(error) throw error;
+        console.log('user info is : ', rows);
+        
+        res.status(200).send(rows);
+    });
+});
+
 // 문의 버튼
 
 app.post('/submit', async (req, res) => {
