@@ -33,10 +33,11 @@ function dbconfig(){
     return connection;
 }
 
-function sendToServer(values){
+const connection = dbconfig();
+
+function sendToServer(values, connection){
 
     const sql = "INSERT INTO orders VALUES(now(), ?, ?, ?, ?, ?, ?, ?, ?, false);"
-    const connection = dbconfig();
 
     connection.query(
         sql, values, (err) => {
@@ -81,7 +82,7 @@ app.post('/submit', async (req, res) => {
         return;
     }else{
         console.log('success sending');
-        sendToServer(values);
+        sendToServer(values, connection);
         res.redirect('/submit.html');
     }
 
