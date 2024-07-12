@@ -57,7 +57,7 @@ app.get('/', (req, res) => {
 
 // app request
 app.get('/items', (req, res) => {
-    connection.query('SELECT * FROM orders', (error, rows) => {
+    connection.query('SELECT upload_time, buyer, phone FROM orders', (error, rows) => {
         if(error) throw error;
         console.log('user info is : ', rows);
         
