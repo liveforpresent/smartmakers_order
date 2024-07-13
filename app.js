@@ -57,7 +57,7 @@ app.get('/', (req, res) => {
 
 // app request
 app.get('/items', (req, res) => {
-    connection.query('SELECT upload_time, buyer, phone FROM orders', (error, rows) => {
+    connection.query('SELECT TIME_FORMAT(upload_time, "%H:%i:%s") AS upload_time, buyer, phone FROM your_table', (error, rows) => {
         if(error) throw error;
         console.log('user info is : ', rows);
         
