@@ -57,11 +57,10 @@ app.get('/', (req, res) => {
 
 // app request
 app.get('/items', (req, res) => {
-    connection.query('SELECT DATE_FORMAT(upload_time, "%m-%d  %H:%i") AS upload_time, buyer, phone FROM orders', (error, rows) => {
+    connection.query('SELECT DATE_FORMAT(upload_time, "%m-%d  %H:%i") AS upload_time, buyer, phone FROM orders', (error, results) => {
         if(error) throw error;
-        console.log('user info is : ', rows);
-        
-        res.status(200).send(rows);
+        console.log("Query results:", results);
+        res.json(results);
     });
 });
 
