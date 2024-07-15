@@ -37,7 +37,7 @@ const connection = dbconfig();
 
 function sendToServer(values, connection){
 
-    const sql = "INSERT INTO orders VALUES(now(), ?, ?, ?, ?, ?, ?, ?, ?, false);"
+    const sql = "INSERT INTO orders VALUES(now(), ?, ?, ?, ?, ?, ?, ?, ?, ?, false);"
 
     connection.query(
         sql, values, (err) => {
@@ -73,6 +73,7 @@ app.post('/submit', async (req, res) => {
     const neonWidth = req.body.neon_width;
     const neonHeight = req.body.neon_height;
     const neonContent = req.body.neon_content;
+    const neonColor = req.body.neon_color;
     const reqContents = req.body.req_contents;
     const construction = req.body.construction;
     const values = [buyer, phone, neonType, neonWidth, neonHeight, neonContent, reqContents, construction];

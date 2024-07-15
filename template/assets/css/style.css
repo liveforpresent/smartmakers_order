@@ -44,6 +44,21 @@ body{
     padding: 0 10 0 10px;
 }
 
+.color-image-area{
+    margin: 5px;
+}
+
+.color-image{
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    border: solid #9f9f9f 1px;
+}
+
+.radio-area{
+    overflow: auto;
+}
+
 .order h1{
     color: white;
 }
