@@ -76,9 +76,9 @@ app.post('/submit', async (req, res) => {
     const neonColor = req.body.neon_color;
     const reqContents = req.body.req_contents;
     const construction = req.body.construction;
-    const values = [buyer, phone, neonType, neonWidth, neonHeight, neonContent, reqContents, construction];
+    const values = [buyer, phone, neonType, neonWidth, neonHeight, neonContent, neonColor, reqContents, construction];
 
-    if (buyer === "" || phone === "" || neonType === "" || neonWidth === "" || neonHeight === "" || neonContent === "" || reqContents === "" || construction === ""){
+    if (buyer === "" || phone === "" || neonType === "" || neonWidth === "" || neonHeight === "" || neonContent === "" || neonColor === "" || reqContents === "" || construction === ""){
         return;
     }else{
         console.log('success sending');
