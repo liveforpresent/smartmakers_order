@@ -3,7 +3,7 @@ import body_parser from 'body-parser'
 import helmet from 'helmet';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
-import { createConnection } from 'mysql2';
+import { connection } from './db.js';
 import { config } from 'dotenv';
 
 const app = express();
@@ -20,20 +20,11 @@ app.use(express.static(join(__dirname, "template")));
 app.use(body_parser.json());
 app.use(body_parser.urlencoded({extended : false}));
 
-function dbconfig(){
-    const conInfo = {
-        host: process.env.RDS_HOSTNAME,
-        user: process.env.RDS_USERNAME,
-        password: process.env.RDS_PASSWORD,
-        database: process.env.RDS_DATABASE,
-        port: process.env.RDS_PORT
-    }
-    const connection = createConnection(conInfo);
-    
-    return connection;
-}
 
-const connection = dbconfig();
+// main
+app.get('/', (req, res) => {
+    res.sendFile("/index.html");  
+});
 
 function sendToServer(values, connection){
 
@@ -46,14 +37,8 @@ function sendToServer(values, connection){
             }
         }
     );
-
-    return connection.connect();
 }
 
-// main
-app.get('/', (req, res) => {
-    res.sendFile("/index.html");  
-});
 
 // app request
 app.get('/items', (req, res) => {
