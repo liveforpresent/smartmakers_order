@@ -11,6 +11,7 @@ const conInfo = {
         port: process.env.RDS_PORT
 }
 
-const connection = createConnection(conInfo).connect();
+const connection = createConnection(conInfo);
+connection.connect();
 
 export {connection};
