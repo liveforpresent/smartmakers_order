@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 
 // app request
 app.get('/items', (req, res) => {
-    connection.query(`SELECT DATE_FORMAT(upload_time, "%m-%d  %H:%i") AS upload_time, buyer, phone FROM orders`, (error, results) => {
+    connection.query(`SELECT DATE_FORMAT(upload_time, "%m-%d  %H:%i") AS upload_time, buyer, phone, neon_type, neon_width, neon_height, neon_color, neon_content, req_contents, construction FROM orders`, (error, results) => {
         if(error) throw error;
         console.log("Query results:", results);
         res.json(results);
