@@ -27,7 +27,7 @@ constructionList.forEach(element => {
     });
 });
 
-elements = [buyer, phone, neonWidth, neonHeight, neonContent, reqContents];
+elements = [buyer, phone, neonWidth, neonHeight, neonContent];
 
 orderForm.addEventListener("submit", (event) => {
     for(var i = 0; i < elements.length; i++){
