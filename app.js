@@ -35,6 +35,7 @@ app.get('/items', (req, res) => {
         console.log("Query results:", results);
         res.json(results);
     });
+    connection.end();
 });
 
 // 문의 버튼
@@ -63,6 +64,7 @@ app.post('/submit', async (req, res) => {
                 }
             }
         );
+        connection.end();
         sendPushNotification();
         res.redirect('/submit.html');
     }
