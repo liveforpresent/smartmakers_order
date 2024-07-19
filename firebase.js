@@ -15,7 +15,8 @@ function sendPushNotification() {
         notification: {
             title: 'New Data Added',
             body: "새 주문이 들어왔습니다."
-        }
+        },
+        topic: 'all'
     };
 
     admin.messaging().send(payload)
