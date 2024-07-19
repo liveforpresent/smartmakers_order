@@ -1,21 +1,25 @@
-import { initializeApp, messaging, credential } from 'firebase-admin';
-import * as serviceAccount from './smartmakers-order-push-firebase-adminsdk-5vziv-90c94c2b66.json';
-import { connection } from './db';
+//import { initializeApp, messaging, credential } from 'firebase-admin';
+import serviceAccount from './smartmakers-order-push-firebase-adminsdk-5vziv-e0187c5623.json' assert {type: 'json'};
+import { createRequire } from 'module';
 
-initializeApp({
-    credential: credential.cert(serviceAccount)
+const require = createRequire(import.meta.url);
+const admin = require('firebase-admin');
+
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount)
 });
 
 // Function to send push notification
-function sendPushNotification(token, message) {
+function sendPushNotification() {
     const payload = {
         notification: {
             title: 'New Data Added',
-            body: message
-        }
+            body: "새 주문이 들어왔습니다."
+        },
+        topic: 'all'
     };
 
-    messaging().sendToDevice(token, payload)
+    admin.messaging().send(payload)
         .then(response => {
             console.log('Successfully sent message:', response);
         })
@@ -24,10 +28,4 @@ function sendPushNotification(token, message) {
         });
 }
 
-// Monitor for new data in MySQL and send notification
-connection.on('newData', (data) => {
-    const message = `New data added: ${data.name}`;
-    const userToken = 'user-device-token'; // You need to obtain and store this for each user
-
-    sendPushNotification(userToken, message);
-});
+export { sendPushNotification };

@@ -4,7 +4,9 @@ import helmet from 'helmet';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { connection } from './db.js';
+import { sendPushNotification } from './firebase.js';
 import { config } from 'dotenv';
+import { send } from 'process';
 
 const app = express();
 config();
@@ -25,20 +27,6 @@ app.use(body_parser.urlencoded({extended : false}));
 app.get('/', (req, res) => {
     res.sendFile("/index.html");  
 });
-
-function sendToServer(values, connection){
-
-    const sql = "INSERT INTO orders VALUES(now(), ?, ?, ?, ?, ?, ?, ?, ?, ?, false);"
-
-    connection.query(
-        sql, values, (err) => {
-            if (err){
-                console.log(err);
-            }
-        }
-    );
-}
-
 
 // app request
 app.get('/items', (req, res) => {
@@ -67,7 +55,15 @@ app.post('/submit', async (req, res) => {
         return;
     }else{
         console.log('success sending');
-        sendToServer(values, connection);
+        const sql = "INSERT INTO orders VALUES(now(), ?, ?, ?, ?, ?, ?, ?, ?, ?, false);"
+        connection.query(
+            sql, values, (err) => {
+                if (err){
+                    console.log(err);
+                }
+            }
+        );
+        sendPushNotification();
         res.redirect('/submit.html');
     }
 
