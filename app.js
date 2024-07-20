@@ -6,7 +6,6 @@ import { fileURLToPath } from 'url';
 import { connection } from './db.js';
 import { sendPushNotification } from './firebase.js';
 import { config } from 'dotenv';
-import { send } from 'process';
 
 const app = express();
 config();

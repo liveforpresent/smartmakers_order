@@ -17,8 +17,11 @@
     <!--close icon-->
     <link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet">
 
+    <!-- font -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
 
     <!-- title of site -->
     <title>Smartmakers 주문하기</title>
@@ -37,10 +40,6 @@
 
     <!--animate.css-->
     <link rel="stylesheet" href="assets/css/animate.css">
-
-    <!--owl.carousel.css-->
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
 
     <!--bootstrap.min.css-->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -77,195 +76,203 @@
         </div>
         <form id="order_form" action="/submit" method="POST">
             <div class="content-area">
-                <h3>구매자</h3>
-                <div class="mb-3">
+                <div class="content-row">
                     <label for="buyer" class="form-label"></label>
+                    <img src="assets/images/buyer_icon.png" class="icons">
                     <input type="text" class="form-control" id="buyer" name="buyer" placeholder="업체명이나 성함을 입력해주세요">
                 </div>
-                <h3>연락처</h3>
-                <div class="mb-3">
+                <div class="content-row">
                     <label for="phone" class="form-label"></label>
+                    <img src="assets/images/phone_icon.png" class="icons">
                     <input type="text" class="form-control" id="phone" name="phone" placeholder="휴대폰 번호를 입력해주세요">
                 </div>
-                <h3>네온 종류</h3>
-                <div class="radio-area">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="neon_type" id="type_inner"
-                            value="type_inner">
-                        <label class="form-check-label" for="type_inner">
-                            내부 네온
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="neon_type" id="type_outer"
-                            value="type_outer">
-                        <label class="form-check-label" for="type_outer">
-                            외부 네온
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="neon_type" id="type_chandelier"
-                            value="type_chandelier">
-                        <label class="form-check-label" for="type_chandelier">
-                            샹들리에 네온
-                        </label>
+                <div class="content-row">
+                    <img src="assets/images/type_icon.png" class="icons">
+                    <div class="radio-area">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="neon_type" id="type_inner"
+                                value="type_inner">
+                            <label class="form-check-label" for="type_inner">
+                                내부 네온
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="neon_type" id="type_outer"
+                                value="type_outer">
+                            <label class="form-check-label" for="type_outer">
+                                외부 네온
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="neon_type" id="type_chandelier"
+                                value="type_chandelier">
+                            <label class="form-check-label" for="type_chandelier">
+                                샹들리에 네온
+                            </label>
+                        </div>
                     </div>
                 </div>
-                <h3>가로</h3>
-                <div class="mb-3">
+
+                <div class="content-row">
                     <label for="neon-width" class="form-label"></label>
+                    <img src="assets/images/width_icon.png" class="icons">
                     <input type="text" class="form-control" id="neon_width" name="neon_width"
                         placeholder="가로 (샹들리에 네온의 경우 직경/지름)을 입력해주세요">
                 </div>
-                <h3>세로</h3>
-                <div class="mb-3">
+                <div class="content-row">
                     <label for="neon-height" class="form-label"></label>
+                    <img src="assets/images/height_icon.png" class="icons">
                     <input type="text" class="form-control" id="neon_height" name="neon_height"
                         placeholder="세로 (샹들리에 네온의 경우 직경/지름)을 입력해주세요">
                 </div>
-                <h3>간판 내용</h3>
-                <div class="mb-3">
+                <div class="content-row">
                     <label for="neon-content" class="form-label"></label>
+                    <img src="assets/images/content_icon.png" class="icons">
                     <textarea class="form-control" id="neon_content" name="neon_content" rows="3" placeholder="간판에 들어갈 문구를 적어주세요"
                         style="resize: none;"></textarea>
                 </div>
-                <h3>색상</h3>
-                <div class="radio-area">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="neon_color" id="color_red"
-                            value="color_red">
-                        <label class="form-check-label" for="color_red">
-                            <div class="color-image-area">
-                                <img src="assets/images/red.png" alt="color_red" class="color-image">
-                            </div>
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="neon_color" id="color_violet"
-                            value="color_violet">
-                        <label class="form-check-label" for="color_violet">
-                            <div class="color-image-area">
-                                <img src="assets/images/violet.png" alt="color_violet" class="color-image">
-                            </div>
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="neon_color" id="color_orange"
-                            value="color_orange">
-                        <label class="form-check-label" for="color_orange">
-                            <div class="color-image-area">
-                                <img src="assets/images/orange.png" alt="color_orange" class="color-image">
-                            </div>
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="neon_color" id="color_pink"
-                            value="color_pink">
-                        <label class="form-check-label" for="color_pink">
-                            <div class="color-image-area">
-                                <img src="assets/images/pink.png" alt="color_pink" class="color-image" class="color-image">
-                            </div>
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="neon_color" id="color_yellow"
-                            value="color_yellow">
-                        <label class="form-check-label" for="color_yellow">
-                            <div class="color-image-area">
-                                <img src="assets/images/yellow.png" alt="color_yellow" class="color-image">
-                            </div>
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="neon_color" id="color_pure_white"
-                            value="color_pure_white">
-                        <label class="form-check-label" for="color_pure_white">
-                            <div class="color-image-area">
-                                <img src="assets/images/pure_white.png" alt="color_pure_white" class="color-image">
-                            </div>
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="neon_color" id="color_lemon"
-                            value="color_lemon">
-                        <label class="form-check-label" for="color_lemon">
-                            <div class="color-image-area">
-                                <img src="assets/images/lemon.png" alt="color_lemon" class="color-image">
-                            </div>
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="neon_color" id="color_natural_white"
-                            value="color_natural_white">
-                        <label class="form-check-label" for="color_natural_white">
-                            <div class="color-image-area">
-                                <img src="assets/images/natural_white.png" alt="color_natural_white" class="color-image">
-                            </div>
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="neon_color" id="color_warm_white"
-                            value="color_warm_white">
-                        <label class="form-check-label" for="color_warm_white">
-                            <div class="color-image-area">
-                                <img src="assets/images/warm_white.png" alt="color_warm_white" class="color-image">
-                            </div>
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="neon_color" id="color_green"
-                            value="color_green">
-                        <label class="form-check-label" for="color_green">
-                            <div class="color-image-area">
-                                <img src="assets/images/green.png" alt="color_green" class="color-image">
-                            </div>
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="neon_color" id="color_ice_blue"
-                            value="color_ice_blue">
-                        <label class="form-check-label" for="color_ice_blue">
-                            <div class="color-image-area">
-                                <img src="assets/images/ice_blue.png" alt="color_ice_blue" class="color-image">
-                            </div>
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="neon_color" id="color_blue"
-                            value="color_blue">
-                        <label class="form-check-label" for="color_blue">
-                            <div class="color-image-area">
-                                <img src="assets/images/blue.png" alt="color_blue" class="color-image">
-                            </div>
-                        </label>
+                <div class="content-row">
+                    <img src="assets/images/color_icon.png" class="icons">
+                    <div class="radio-area">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="neon_color" id="color_red"
+                                value="color_red">
+                            <label class="form-check-label" for="color_red">
+                                <div class="color-image-area">
+                                    <img src="assets/images/red.png" alt="color_red" class="color-image">
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="neon_color" id="color_violet"
+                                value="color_violet">
+                            <label class="form-check-label" for="color_violet">
+                                <div class="color-image-area">
+                                    <img src="assets/images/violet.png" alt="color_violet" class="color-image">
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="neon_color" id="color_orange"
+                                value="color_orange">
+                            <label class="form-check-label" for="color_orange">
+                                <div class="color-image-area">
+                                    <img src="assets/images/orange.png" alt="color_orange" class="color-image">
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="neon_color" id="color_pink"
+                                value="color_pink">
+                            <label class="form-check-label" for="color_pink">
+                                <div class="color-image-area">
+                                    <img src="assets/images/pink.png" alt="color_pink" class="color-image" class="color-image">
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="neon_color" id="color_yellow"
+                                value="color_yellow">
+                            <label class="form-check-label" for="color_yellow">
+                                <div class="color-image-area">
+                                    <img src="assets/images/yellow.png" alt="color_yellow" class="color-image">
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="neon_color" id="color_pure_white"
+                                value="color_pure_white">
+                            <label class="form-check-label" for="color_pure_white">
+                                <div class="color-image-area">
+                                    <img src="assets/images/pure_white.png" alt="color_pure_white" class="color-image">
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="neon_color" id="color_lemon"
+                                value="color_lemon">
+                            <label class="form-check-label" for="color_lemon">
+                                <div class="color-image-area">
+                                    <img src="assets/images/lemon.png" alt="color_lemon" class="color-image">
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="neon_color" id="color_natural_white"
+                                value="color_natural_white">
+                            <label class="form-check-label" for="color_natural_white">
+                                <div class="color-image-area">
+                                    <img src="assets/images/natural_white.png" alt="color_natural_white" class="color-image">
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="neon_color" id="color_warm_white"
+                                value="color_warm_white">
+                            <label class="form-check-label" for="color_warm_white">
+                                <div class="color-image-area">
+                                    <img src="assets/images/warm_white.png" alt="color_warm_white" class="color-image">
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="neon_color" id="color_green"
+                                value="color_green">
+                            <label class="form-check-label" for="color_green">
+                                <div class="color-image-area">
+                                    <img src="assets/images/green.png" alt="color_green" class="color-image">
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="neon_color" id="color_ice_blue"
+                                value="color_ice_blue">
+                            <label class="form-check-label" for="color_ice_blue">
+                                <div class="color-image-area">
+                                    <img src="assets/images/ice_blue.png" alt="color_ice_blue" class="color-image">
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="neon_color" id="color_blue"
+                                value="color_blue">
+                            <label class="form-check-label" for="color_blue">
+                                <div class="color-image-area">
+                                    <img src="assets/images/blue.png" alt="color_blue" class="color-image">
+                                </div>
+                            </label>
+                        </div>
                     </div>
                 </div>
-                <h3>기타 요청 사항</h3>
-                <div class="mb-3">
+                <div class="content-row">
                     <label for="req_contents" class="form-label"></label>
+                    <img src="assets/images/req_icon.png" class="icons">
                     <textarea class="form-control" id="req_contents" name="req_contents" rows="3" placeholder="기타 요청 사항을 적어주세요"
                         style="resize: none;"></textarea>
                 </div>
-                <h3>시공 여부</h3>
-                <div class="radio-area">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="construction" id="construction_true"
-                            value="construction_true">
-                        <label class="form-check-label" for="construction_true">
-                            O
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="construction" id="construction_false"
-                            value="construction_false">
-                        <label class="form-check-label" for="construction_false">
-                            X
-                        </label>
+                <div class="content-row">
+                    <img src="assets/images/options_icon.png" class="icons">
+                    <div class="radio-area">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="construction" id="construction_true"
+                                value="construction_true">
+                            <label class="form-check-label" for="construction_true">
+                                시공 요청
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="construction" id="construction_false"
+                                value="construction_false">
+                            <label class="form-check-label" for="construction_false">
+                                시공 제외
+                            </label>
+                        </div>
                     </div>
                 </div>
+                
             </div>
             <div class="submit-button">
-                <button type="submit" class="btn btn-primary mb-3" id="submit_button">주문하기</button>
+                <button type="submit" class="btn btn-primary mb-3" id="submit_button">견적 요청하기</button>
             </div>
         </form>
     </div>
