@@ -11,7 +11,7 @@ const app = express();
 config();
 const port = process.env.PORT;
 
-// 보안
+// helmet
 app.use(helmet());
 
 const __dirname = dirname(fileURLToPath(import.meta.url))

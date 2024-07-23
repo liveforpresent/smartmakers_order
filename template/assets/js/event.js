@@ -11,6 +11,8 @@ const orderForm = document.getElementById('order_form');
 var neonType = ""
 var neonColor = "";
 var construction = "";
+
+// radio 선택 value 얻기
 neonTypeList.forEach(element => {
     element.addEventListener("click", (e) => {
         if (e.currentTarget.checked) neonType = e.currentTarget.value;
@@ -29,7 +31,9 @@ constructionList.forEach(element => {
 
 elements = [buyer, phone, neonWidth, neonHeight, neonContent];
 
+// submit
 orderForm.addEventListener("submit", (event) => {
+    //입력 안 된 부분으로 focus
     for(var i = 0; i < elements.length; i++){
         if(!elements[i].value){
             elements[i].focus();

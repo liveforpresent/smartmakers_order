@@ -3,6 +3,7 @@ import { config } from 'dotenv';
 
 config();
 
+// db 환경변수
 const conInfo = {
         host: process.env.RDS_HOSTNAME,
         user: process.env.RDS_USERNAME,

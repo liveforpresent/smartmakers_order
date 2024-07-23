@@ -9,7 +9,7 @@ admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
 });
 
-// Function to send push notification
+// 푸시알람 전송
 function sendPushNotification() {
     const payload = {
         notification: {
