@@ -10,3 +10,7 @@ aws 통해서 배포 성공
 
 GCP로 서버 이동. 배포 성공. 3개월 간은 프리티어라 비용 부담 없이 사용 가능.
 db, compute engine, load balancer 등 전부 최소 스펙으로 설정 했으나 여전히 비용이 많이 발생...
+
+android studio app과 nodejs 서버 연결 성공. retrofit 사용.
+db에 데이터 삽입 시, 푸시 알람 전송 성공. fcm 사용.
+앱에서 주문 목록을 볼 수 있도록 구성.
