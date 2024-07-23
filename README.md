@@ -1,4 +1,4 @@
-첫 백엔드 서버 + 프론트 엔드  
+첫 백엔드 서버  
 
 aws 통해서 배포 성공
   - elastic beanstalk 사용.
